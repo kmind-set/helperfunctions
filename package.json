@@ -1,0 +1,19 @@
+{
+  "name": "helperfunctions",
+  "version": "1.0.0",
+  "description": "A set of util functions for processing data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmind-set/helperfunctions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmind-set/helperfunctions/issues"
+  },
+  "homepage": "https://github.com/kmind-set/helperfunctions#readme"
+}
