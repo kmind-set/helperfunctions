@@ -2,8 +2,9 @@
 
 function getValuefromProperty(object, field) {
 
-    const fields = field.split('.').length
-    if (fields > 1) {
+    const fields = field.split('.')
+    if (fields.length > 1) {
+        
         return fields.reduce((prev, field) => {
             return prev[field]
         }, object)
@@ -22,7 +23,7 @@ function groupElements(arr, fields) {
     arr.map((obj) => {
         let index = groupIndexes.findIndex((groupIndex) =>
         (fields.every((field) =>
-            (getValuefromProperty(obj, field) == groupIndex[field])
+            (  groupIndex[field] == getValuefromProperty(obj, field))
         ))
         )
 
@@ -50,12 +51,13 @@ function groupElements(arr, fields) {
 
 }
 
-const ListAnimals = [
+const pets = [
 
-    { name: "dog", age: 1 },
-    { name: "cat", age: 2 },
-    { name: "dolphin", age: 2 },
-    { name: "tiger", age: 1 }
+    { name: "dog", age: 1, owner: { name: "Phil" } },
+    { name: "cat", age: 2, owner: { name: "Phil" } },
+    { name: "dolphin", age: 2, owner: { name: "Ana" } },
+    { name: "tiger", age: 1, owner: { name: "Phil" } }
 ]
 
-console.log(groupElements(ListAnimals, ["age"]))
+console.log(groupElements(pets, ["age"]))
+console.log(groupElements(pets, ["owner.name"]))
