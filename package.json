@@ -4,16 +4,22 @@
   "description": "A set of util functions for processing data",
   "main": "index.js",
   "scripts": {
+    "start:dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kmind-set/helperfunctions.git"
   },
-  "author": "",
+  "author": "Camila Aravena",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kmind-set/helperfunctions/issues"
   },
-  "homepage": "https://github.com/kmind-set/helperfunctions#readme"
+  "homepage": "https://github.com/kmind-set/helperfunctions#readme",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
 }
