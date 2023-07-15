@@ -1,3 +1,5 @@
+import { Nest } from "./util.types";
+
 export function getValuefromProperty<T extends Record<any, any>>(
   object: T,
   field: keyof T | string
@@ -13,7 +15,7 @@ export function getValuefromProperty<T extends Record<any, any>>(
 
 export function groupElements<T extends object, K extends keyof T = keyof T>(
   arr: T[],
-  fields: (K | string | FunctionOverProperty<T>)[]
+  fields: (Nest<T> | FunctionOverProperty<Nest<T>>)[]
 ) {
   type a = (typeof fields)[number];
 
@@ -93,7 +95,7 @@ export function toUniqueArrayValues<
   return Object.values(objectIndex);
 }
 
-export type FunctionOverProperty<T, K = keyof T> = {
+export type FunctionOverProperty<T> = {
   fn: Function;
-  field: K | string;
+  field: T;
 };
